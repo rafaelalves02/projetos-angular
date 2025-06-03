@@ -1,0 +1,23 @@
+.locations {
+    display: flex;
+}
+
+.locations .location {
+    background: #a9a9a9;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.locations .location.active {
+    background: rgb(0, 203, 0);
+}
+
+.locations .location.active:hover {
+    background: rgb(0, 167, 0);
+}
+
+.locations .location:hover {
+    background: #979797;
+}

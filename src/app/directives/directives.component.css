@@ -1,0 +1,9 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.background-cinza {
+    background: rgb(184, 184, 184);
+}

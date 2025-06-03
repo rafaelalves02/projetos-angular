@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    font-family: sans-serif;
+}
+
+h1, h2{
+    font-size: 43px;
+}
+
+.botao , button {
+    border-radius: 5px;
+    cursor:pointer ;
+    margin: 7px 0px;
+}
+
+input[type=text], select{
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+}
+
+.vermelho {
+    background: red;
+}
+
+.verde {
+    background: green;
+}

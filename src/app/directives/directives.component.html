@@ -1,0 +1,19 @@
+<h2>Exemplos de diretivas</h2>
+
+<p [ngStyle]="estilosParagrafos">este é um paragrafo</p>
+
+<button [ngClass]="aplicarEstiloVerde ? classeBotaoVerde : classBotaoVermelho" (click)="aplicarEstilo()">aplicar estilo</button>
+
+<label *ngIf="camposVisiveis" for="nome">Digite seu nome:</label>
+<input *ngIf="camposVisiveis" type="text" id="nome" [(ngModel)]="name">
+
+<label *ngIf="camposVisiveis" for="nomeMaiusculo">Digite seu nome (Maiusculas)</label>
+<input *ngIf="camposVisiveis" type="text" id="nomeMaiusculo" [(ngModel)]="name" (ngModelChange)="alterarParaMaiusculo($event)">
+
+<button (click)="esconderCampos()" >{{camposButton}}</button>
+
+<h3>Lista De Clientes<h3>
+
+<div *ngFor="let cliente of clientes; let i=index; let impar=odd;" [class.background-cinza]="impar">
+{{i + 1}} {{cliente.nome}}
+</div>

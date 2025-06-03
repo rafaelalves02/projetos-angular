@@ -1,0 +1,56 @@
+<h2>formulario reactive</h2>
+
+<form [formGroup]="profileForm" (ngSubmit)="submitForm()">
+    <label for="name">Nome:</label>
+    <input type="text" id="name" formControlName="name">
+
+    <label for="name">CPF:</label>
+    <input type="text" id="name" formControlName="cpf">
+
+    <div formGroupName="address">
+        <h3>Enderço</h3>
+
+        <label for="street">Rua:</label>
+        <input type="text" formControlName="street">
+
+        <label for="city">Cidade:</label>
+        <input type="text" formControlName="city">
+
+        <label for="state">Estado:</label>
+        <input type="text" formControlName="state">
+
+        <label for="zip">Cep:</label>
+        <input type="text" formControlName="zip">
+
+    </div>
+    <div formGroupName="opicionais">
+        <h3>Opicionais</h3>
+      
+        <label for="servico">como você avalia esse serviço:</label>
+        <input type="text" formControlName="servico">
+             
+    </div>
+    <div formArrayName="nicknames">
+        <h3>Apelidos</h3>
+
+        <button type="button" (click)="adicionarApelido()">adicionarApelido</button>
+
+        <div *ngFor="let apelido of apelidos.controls; let i=index">
+            <label for="apelido-{{i}}">Apelido:</label>
+            <input type="text" id="apleido-{{i}}" [formControlName]="i">
+        </div>
+
+    </div>
+    
+
+    <button type="submit" [disabled]="!profileForm.valid">Salvar</button>
+
+</form>
+
+<p>seu nome é {{profileForm.controls.name.value}}</p>
+
+<p>Status: {{profileForm.status}}</p>
+
+<p>
+    <button (click)="atualizarDados()">Atualizar Dados</button>
+</p>

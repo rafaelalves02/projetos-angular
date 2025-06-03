@@ -1,0 +1,22 @@
+<h2>template form</h2>
+
+<form #customerForm="ngForm" (ngSubmit)="onSubmit()">
+    <label for="name">Nome:</label>
+    <input type="text" id="name" required [(ngModel)]="model.name" name="name" #name="ngModel">
+    <div [hidden]="name.valid || name.pristine">
+        O nome é obrigatorio!
+    </div>
+
+    <label for="cpf">CPF:</label>
+    <input type="text" id="cpf" required [(ngModel)]="model.cpf" name="cpf" #cpf="ngModel">
+    <div [hidden]="cpf.valid || cpf.pristine">
+        O CPF é obrigatorio!
+    </div>
+
+    <label for="genero">Genero:</label>
+    <select id="genero"  [(ngModel)]="model.genero" name="genero">
+        <option *ngFor="let genero of generos" [value]="genero">{{genero}}</option>
+    </select>
+
+    <button type="submit" class="botao" [disabled]="!customerForm.form.valid">Salvar</button>
+</form>
